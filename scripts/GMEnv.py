@@ -8,7 +8,7 @@ Created on Fri Jun  3 14:55:13 2022
 from gymnasium import Env
 from gymnasium.spaces import Discrete, Box
 import numpy as np
-from scripts.QE.QueryEngine import QueryEngine
+from .QE.QueryEngine import QueryEngine
 
 class GMEnv(Env):
 

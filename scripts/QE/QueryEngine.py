@@ -6,7 +6,7 @@ Created on Tue Jan 31 11:39:07 2023
 """
 
 from pyswip import Prolog
-from scripts.QE.QMI import QMI
+from .QMI import QMI
 
 class QueryEngine(QMI):
     
