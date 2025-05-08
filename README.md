@@ -11,7 +11,7 @@ The example goal models and various tests and experiments against them can be fo
 
 
 ## Prerequisites
-- Python 3.9 (required) - This project has been tested with Python 3.9 and may not work with other versions
+- Python 3.13 (latest) - This project has been tested with Python 3.13 and may not work with other versions
 - SWI-Prolog (for running the DT-Golog code)
 - Git
 
@@ -28,12 +28,15 @@ To ensure a reproducible environment, it is recommended to use a Python virtual 
 2. **Verify Python version and create virtual environment:**
    ```bash
    # Check Python version
-   python3.9 --version  # Should show Python 3.9.x
+   python --version  # Should show Python 3.13.x
+   ```
+   ```bash
+   # Create virtual environment with Python 3.13
+   python -m venv venv
+    ```
    
-   # Create virtual environment with Python 3.9
-   python3.9 -m venv venv
+   ```bash
    
-   # Activate virtual environment
    source venv/bin/activate  # On Linux/Mac
    # OR
    venv\Scripts\activate     # On Windows
@@ -41,11 +44,8 @@ To ensure a reproducible environment, it is recommended to use a Python virtual 
 
 3. **Install the required dependencies:**
    ```bash
-   # First, install specific versions of pip, setuptools, and wheel
-   python3.9 -m pip install pip==21.0.0 setuptools==65.5.0 wheel==0.38.0
-   
-   # Then install project dependencies
-   python3.9 -m pip install -r requirements.txt
+   # Install project dependencies
+   python -m pip install -r requirements.txt
    ```
 
    This will install all necessary packages with the correct versions for this project.
