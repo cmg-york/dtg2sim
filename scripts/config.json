@@ -6,13 +6,9 @@
     "trainingIter": 1000,
     "learningAlgorithm": "PPO",
     "learningLoggingInterval": 500,
-    "dtGologOptimal": 0.47599999999999987,
-    "simParams": [1],
     "seed": 123,
     "debug": false,
-    "exampleType": "discrete",
     "forgivePenalty": true,
     "optimalSimParams": [0, 2],
-    "multiRunSimParams": [0, 2, 0, 2],
-    "inFeasiblePenalty": -100
+    "multiRunSimParams": [0, 2, 0, 2]
 } 
