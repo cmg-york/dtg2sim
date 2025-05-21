@@ -22,7 +22,7 @@ To ensure a reproducible environment, it is recommended to use a Python virtual 
 1. **Clone the repository locally.**
    ```bash
    git clone <repository-url>
-   cd RLGen
+   cd dtg2sim
    ```
 
 2. **Verify Python version and create virtual environment:**
@@ -41,6 +41,13 @@ To ensure a reproducible environment, it is recommended to use a Python virtual 
    # OR
    venv\Scripts\activate     # On Windows
    ```
+   
+   On Windows, you may need to open in Powershell as administrator and give:
+
+	```
+	Set-ExecutionPolicy RemoteSigned 
+	```
+	Watch for `(venv)` to appear at the beginning of your commant prompt to verify that the virtual environment is active.
 
 3. **Install the required dependencies:**
    ```bash
