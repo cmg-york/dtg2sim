@@ -1,7 +1,7 @@
-# Use Python 3.13 as base image
-FROM python:3.13-slim
+# Build stage
+FROM python:3.13-slim as builder
 
-# Install system dependencies including SWI-Prolog
+# Install build dependencies
 RUN apt-get update && apt-get install -y \
     swi-prolog \
     git \
@@ -10,14 +10,31 @@ RUN apt-get update && apt-get install -y \
 # Set working directory
 WORKDIR /app
 
-# Copy requirements first to leverage Docker cache
+# Copy only requirements first to leverage Docker cache
 COPY requirements.txt .
 
 # Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the entire project
-COPY . .
+# Final stage
+FROM python:3.13-slim
+
+# Install only runtime dependencies
+RUN apt-get update && apt-get install -y \
+    swi-prolog \
+    && rm -rf /var/lib/apt/lists/* \
+    && apt-get clean
+
+# Set working directory
+WORKDIR /app
+
+# Copy Python packages from builder
+COPY --from=builder /usr/local/lib/python3.13/site-packages/ /usr/local/lib/python3.13/site-packages/
+
+# Copy only necessary project files
+COPY requirements.txt .
+COPY scripts/ scripts/
+COPY examples/ examples/
 
 # Create QE directory if it doesn't exist
 RUN mkdir -p scripts/QE

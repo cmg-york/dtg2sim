@@ -10,16 +10,34 @@ __pycache__/
 .Python
 venv/
 ENV/
+*.egg-info/
+dist/
+build/
+*.egg
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # Docker
 Dockerfile
 .dockerignore
+docker-entrypoint.sh
+
+# Documentation
+*.md
+!README.md
+docs/
+*.html
+!README.html
+
+# Build artifacts
+*.spec
+build/
+dist/
 
 # Misc
 *.log
-*.swp
 .DS_Store 
